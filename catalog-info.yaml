@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ze5x135ms-python-gitops
+  description: This is GitOps manifest for ze5x135ms-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ze5x135ms-python
+    backstage.io/kubernetes-id: ze5x135ms-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ze5x135ms-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ze5x135ms-python
